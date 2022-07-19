@@ -84,7 +84,7 @@ for(most of newCat){
 	tempItem--;
 }
 for(most of perPrice){
-	if(itemNoToShow > 0) console.log("Most Ordered food per Price: ",most.title,"		Category: ",most.cat,"	Total Price: ",most.totalPrice+" Toman");
+	if(tempItem > 0) console.log("Most Ordered food per Price: ",most.title,"		Category: ",most.cat,"	Total Price: ",most.totalPrice+" Toman");
 	else {
 		tempItem = itemNoToShow;
 		break;
