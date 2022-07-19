@@ -50,9 +50,6 @@ for (let i = 0; i < content.length; i++) {
     if (!order.orderCanceled) {
         let isItem = false;
         let tempCat=cat.map(item=>{
-//console.log("item.id",item.id);
-//console.log("order.id",order.id);
-
             if(item.id === order.vendorId){
 		
             isItem=true;
@@ -65,7 +62,6 @@ for (let i = 0; i < content.length; i++) {
             }
         })
         if(!isItem){
-		//console.log("IAMHERE...")
             tempCat.push({no:1,cat:order.newType,id:order.vendorId,title:order.vendorTitle,totalPrice:order['totalPrice']});
         }
 	cat=[];
@@ -77,14 +73,23 @@ for (let i = 0; i < content.length; i++) {
 
 let newCat = cat.slice().sort(sortMostOrder);
 let perPrice = cat.slice().sort(sortPriceMostOrder);
-console.log(perPrice,newCat);
-console.log("Most Ordered food from: ",newCat[0].title,"		Category: ",newCat[0].cat,"	Order Times: ",newCat[0].no);
-console.log("Most Ordered food from Second: ",newCat[1].title,"		Category: ",newCat[1].cat,"	Order Times: ",newCat[1].no);
-console.log("Most Ordered food from third: ",newCat[2].title,"		Category: ",newCat[2].cat,"	Order Times: ",newCat[2].no);
-
-console.log("Most Ordered food per Price: ",perPrice[0].title,"		Category: ",perPrice[0].cat,"	Total Price: ",perPrice[0].totalPrice+" Toman");
-console.log("Most Ordered food per Price Second: ",perPrice[1].title,"		Category: ",perPrice[1].cat,"	Total Price: ",perPrice[1].totalPrice+" Toman");
-console.log("Most Ordered food per Price third: ",perPrice[2].title,"		Category: ",perPrice[2].cat,"	Total Price: ",perPrice[2].totalPrice+" Toman");
+let itemNoToShow = 3;
+for(most of newCat){
+	if(itemNoToShow > 0) console.log("Most Ordered food from: ",most.title,"		Category: ",most.cat,"	Order Times: ",most.no);
+	else {
+		itemNoToShow = 3;
+		break;
+	}
+	itemNoToShow--;
+}
+for(most of perPrice){
+	if(itemNoToShow > 0) console.log("Most Ordered food per Price: ",most.title,"		Category: ",most.cat,"	Total Price: ",most.totalPrice+" Toman");
+	else {
+		itemNoToShow = 3;
+		break;
+	}
+	itemNoToShow--;
+}
 
 
 console.log(`Total order: ${content.length}`)
