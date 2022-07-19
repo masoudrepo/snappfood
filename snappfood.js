@@ -74,21 +74,22 @@ for (let i = 0; i < content.length; i++) {
 let newCat = cat.slice().sort(sortMostOrder);
 let perPrice = cat.slice().sort(sortPriceMostOrder);
 let itemNoToShow = 3;
+let tempItem = itemNoToShow;
 for(most of newCat){
-	if(itemNoToShow > 0) console.log("Most Ordered food from: ",most.title,"		Category: ",most.cat,"	Order Times: ",most.no);
+	if(tempItem > 0) console.log("Most Ordered food from: ",most.title,"		Category: ",most.cat,"	Order Times: ",most.no);
 	else {
-		itemNoToShow = 3;
+		tempItem = itemNoToShow;
 		break;
 	}
-	itemNoToShow--;
+	tempItem--;
 }
 for(most of perPrice){
 	if(itemNoToShow > 0) console.log("Most Ordered food per Price: ",most.title,"		Category: ",most.cat,"	Total Price: ",most.totalPrice+" Toman");
 	else {
-		itemNoToShow = 3;
+		tempItem = itemNoToShow;
 		break;
 	}
-	itemNoToShow--;
+	tempItem--;
 }
 
 
